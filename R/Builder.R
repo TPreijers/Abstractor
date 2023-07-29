@@ -20,7 +20,7 @@ Builder <- function(wd.data){
 
   if(!exists("wd.data")){wd.data <- "C:/Users/TPreijers/Dropbox/4Abstracts/R_test"}
 
-  CP.issue   <- get0("CP.issue", ifnotfound = "CP.issue not found",   envir = .Globalenv)
+  CP.issue   <- get0("CP.issue", ifnotfound = "CP.issue not found",   envir = .GlobalEnv)
   abstr.txt  <- get0("abstr.txt", ifnotfound = "abstr.txt not found", envir = .GlobalEnv)
   pm.extract <- get0("CP.issue", ifnotfound = "pm.extract not found", envir = .GlobalEnv)
   pm.table   <- get0("CP.issue", ifnotfound = "pm.table not found",   envir = .GlobalEnv)
