@@ -10,4 +10,4 @@ use_git()
 # use_r("Builder")
 
 check()
-
+document()
