@@ -20,7 +20,7 @@ Extractor <- function(wd.data, callout=T){
   val.last <- tail(sort(as.numeric(gsub("^4CP - Editie (\\d{2,3}) - \\d{4}.*$", "\\1", fl.folder))), 1)
   ch.folder <- fl.folder[grepl(paste0("^4CP - Editie ", val.last, ".*$"), fl.folder)]
 
-  fl.files <- dir(path = ch.folder, pattern = "docx", full.names = T)
+  fl.files <- dir(path = file.path(wd.data, ch.folder), pattern = "docx", full.names = T)
 
   pmids <- NA
 
@@ -28,6 +28,10 @@ Extractor <- function(wd.data, callout=T){
     doc.text  <- readtext(file = i)
     doc.parts <- strsplit(doc.text$text, "\n")[[1]]
     doc.pmids <- doc.parts[grepl("pmid", tolower(doc.parts))]
+
+    if(length(grepl("PMID", doc.pmids))>0){
+      doc.pmids[grepl("PMID", doc.pmids)] <- gsub("^.*?PMID: (\\d{8,9})>*?$", "\\1", doc.pmids[grepl("PMID", doc.pmids)])
+    }
 
     pmids <- append(pmids, gsub(".*(\\d{8,}).*?","\\1",  doc.pmids))
 
