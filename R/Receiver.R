@@ -288,7 +288,7 @@ Receiver <- function(wd.data){
   CP.issue$year <- 2020+cumsum(CP.issue$mon.num==1)
 
   assign("CP.issue",   CP.issue,   envir = globalenv())
-  assign("abstr.txt ", abstr.txt , envir = globalenv())
+  assign("abstr.txt", abstr.txt , envir = globalenv())
   assign("pm.table",   pm.table,   envir = globalenv())
   assign("pm.extract", pm.extract, envir = globalenv())
 
