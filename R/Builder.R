@@ -356,5 +356,5 @@ Builder <- function(wd.data){
     file.remove(file.path(wd.data,  gsub("-", "", Sys.Date()),"_4CP_",iss.mon,".docx"))
   }
 
-  print(my_doc, target = file.path(wd.data, gsub("-", "", Sys.Date()),"_4CP_",iss.mon,".docx"))
+  print(my_doc, target = file.path(wd.data, paste0(gsub("-", "", Sys.Date()),"_4CP_",iss.mon,".docx")))
 }
