@@ -1,5 +1,5 @@
 
-#' Buidl the actual word file for publication. This word file still needs to be compiled to a PDF before sending.
+#' Build the actual word file for publication. This word file still needs to be compiled to a PDF before sending.
 #'
 #' @param CP.issue Variable should be in globalenv
 #' @param abstr.txt Variable should be in globalenv
