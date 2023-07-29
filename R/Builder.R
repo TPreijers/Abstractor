@@ -138,7 +138,7 @@ Builder <- function(wd.data){
 
   my_doc  <- read_docx(path = file.path(wd.docs, "Template/4CP - empty.docx"))
   my_back <- read_docx(path = file.path(wd.docs, "Template/4CP - empty2.docx"))
-  my_intl <- read_docx(path = file.path(wd.data, "Internal_links/4CP - internal_links.docx"))
+  my_intl <- read_docx(path = file.path(wd.docs, "Internal_links/4CP - internal_links.docx"))
 
   my_back <- my_back %>% cursor_begin() %>% body_remove()
   my_intl <- my_intl %>% cursor_begin() %>% body_remove()
