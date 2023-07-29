@@ -36,7 +36,7 @@ Receiver <- function(wd.data){
     print(dat.pmid[!grepl("^\\d{8}$", dat.pmid[,1]),,drop=FALSE])
     stop()
   } else {
-    cat("Input-file correct.")
+    cat("Input-file correct.\n")
   }
 
   dat.pmid <- dat.pmid[grepl("^\\d{8}$", dat.pmid[,1]),,drop=FALSE]

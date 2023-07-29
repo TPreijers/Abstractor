@@ -1,10 +1,7 @@
 
 #' Build the actual word file for publication. This word file still needs to be compiled to a PDF before sending.
 #'
-#' @param CP.issue Variable should be in globalenv
-#' @param abstr.txt Variable should be in globalenv
-#' @param pm.extract Variable should be in globalenv
-#' @param pm.table Variable should be in globalenv
+#' @param wd.data Path to data
 #'
 #' @return
 #' @export
@@ -13,7 +10,7 @@
 #'
 #'
 
-Builder <- function(CP.issue=CP.issue, abstr.txt=abstr.txt, pm.extract=pm.extract, pm.table=pm.table, wd.data=wd.data){
+Builder <- function(wd.data){
 
   library(officer)
   library(magrittr)
@@ -22,6 +19,11 @@ Builder <- function(CP.issue=CP.issue, abstr.txt=abstr.txt, pm.extract=pm.extrac
   #rm(list=ls()[!(ls() %in% c("CP.issue","abstr.txt","pm.table","pm.extract"))])
 
   if(!exists("wd.data")){wd.data <- "C:/Users/TPreijers/Dropbox/4Abstracts/R_test"}
+
+  CP.issue   <- get0("CP.issue", ifnotfound = "CP.issue not found")
+  abstr.txt  <- get0("abstr.txt", ifnotfound = "abstr.txt not found")
+  pm.extract <- get0("CP.issue", ifnotfound = "pm.extract not found")
+  pm.table   <- get0("CP.issue", ifnotfound = "pm.table not found")
 
   wh.ord     <- order(pm.table$journal)
   pm.table   <- pm.table[wh.ord,]
