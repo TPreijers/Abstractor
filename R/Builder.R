@@ -22,8 +22,8 @@ Builder <- function(wd.data){
 
   CP.issue   <- get0("CP.issue", ifnotfound = "CP.issue not found",   envir = .GlobalEnv)
   abstr.txt  <- get0("abstr.txt", ifnotfound = "abstr.txt not found", envir = .GlobalEnv)
-  pm.extract <- get0("CP.issue", ifnotfound = "pm.extract not found", envir = .GlobalEnv)
-  pm.table   <- get0("CP.issue", ifnotfound = "pm.table not found",   envir = .GlobalEnv)
+  pm.extract <- get0("pm.extract", ifnotfound = "pm.extract not found", envir = .GlobalEnv)
+  pm.table   <- get0("pm.table", ifnotfound = "pm.table not found",   envir = .GlobalEnv)
 
   wh.ord     <- order(pm.table$journal)
   pm.table   <- pm.table[wh.ord,]
