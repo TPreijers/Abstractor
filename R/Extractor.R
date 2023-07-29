@@ -41,11 +41,12 @@ Extractor <- function(wd.data, callout=T){
   }
 
   pmids <- c(pmids[2:length(pmids)])
-
+  pmids <- trimws(pmids)
+  
   if(callout){print(pmids)}
 
 
   dat.val <- paste0(gsub("-", "", Sys.Date()), "_selectie.txt")
 
-  writeLines(con=paste0(ch.folder, dat.val), text = pmids)
+  writeLines(con=file.path(wd.data, dat.val), text = pmids)
 }
