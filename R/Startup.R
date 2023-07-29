@@ -9,6 +9,6 @@ use_git()
 # use_r("Receiver")
 # use_r("Builder")
 
-check()
+?check()
 document()
 
