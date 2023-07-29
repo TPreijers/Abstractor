@@ -28,7 +28,7 @@ Extractor <- function(wd.data, callout=T){
   for(i in fl.files){
     doc.text  <- readtext(file = i)
     doc.parts <- strsplit(doc.text$text, "\n")[[1]]
-    doc.pmids <- doc.parts[grepl("pmid", tolower(doc.parts))]
+    doc.pmids <- doc.parts[grepl("pmid", tolower(doc.parts)) | grepl("^(\\s+)?\\d{8,9}(\\s+)?$", tolower(doc.parts))]
 
     if(length(grepl("PMID", doc.pmids))>0){
       doc.pmids[grepl("PMID", doc.pmids)] <- gsub("^.*?PMID: (\\d{8,9})>*?$", "\\1", doc.pmids[grepl("PMID", doc.pmids)])
