@@ -7,6 +7,9 @@
 #' @export
 #'
 #' @examples
+#' @import officer
+#' @import magrittr
+#' @import textutils
 #'
 #'
 
@@ -131,8 +134,10 @@ Builder <- function(wd.data){
   )
 
   ## Load docs!
-  my_doc  <- read_docx(path = file.path(wd.data, "Template/4CP - empty.docx"))
-  my_back <- read_docx(path = file.path(wd.data, "Template/4CP - empty2.docx"))
+  wd.docs <- file.path(Sys.getenv("R_LIBS_USER"), "Abstractor")
+
+  my_doc  <- read_docx(path = file.path(wd.docs, "Template/4CP - empty.docx"))
+  my_back <- read_docx(path = file.path(wd.docs, "Template/4CP - empty2.docx"))
   my_intl <- read_docx(path = file.path(wd.data, "Internal_links/4CP - internal_links.docx"))
 
   my_back <- my_back %>% cursor_begin() %>% body_remove()

@@ -19,5 +19,4 @@ Extracts the PMIDs from the word documents in the Dropbox folder
 }
 \examples{
 -
-
 }

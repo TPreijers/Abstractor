@@ -4,22 +4,10 @@
 \alias{Builder}
 \title{Build the actual word file for publication. This word file still needs to be compiled to a PDF before sending.}
 \usage{
-Builder(
-  CP.issue = CP.issue,
-  abstr.txt = abstr.txt,
-  pm.extract = pm.extract,
-  pm.table = pm.table,
-  wd.data = wd.data
-)
+Builder(wd.data)
 }
 \arguments{
-\item{CP.issue}{Variable should be in globalenv}
-
-\item{abstr.txt}{Variable should be in globalenv}
-
-\item{pm.extract}{Variable should be in globalenv}
-
-\item{pm.table}{Variable should be in globalenv}
+\item{wd.data}{Path to data}
 }
 \description{
 Build the actual word file for publication. This word file still needs to be compiled to a PDF before sending.

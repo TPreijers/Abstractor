@@ -8,6 +8,13 @@
 #'
 #' @examples -
 #'
+#' @import easyPubMed
+#' @import XML
+#' @import xml2
+#' @import officer
+#' @import textutils
+#' @import stringr
+#'
 
 
 Receiver <- function(wd.data){

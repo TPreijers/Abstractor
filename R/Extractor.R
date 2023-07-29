@@ -7,6 +7,7 @@
 #' @export
 #'
 #' @examples -
+#' @import readtext
 #'
 
 Extractor <- function(wd.data, callout=T){
@@ -42,7 +43,7 @@ Extractor <- function(wd.data, callout=T){
 
   pmids <- c(pmids[2:length(pmids)])
   pmids <- trimws(pmids)
-  
+
   if(callout){print(pmids)}
 
 
